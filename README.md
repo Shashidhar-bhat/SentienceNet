@@ -1,60 +1,33 @@
-<div align="center">
+# SentienceNet: AI for Social Well-Being
 
-# AI For Social Good
+## Overview
 
-## Suicidal Ideation Detection In Online Social Content
+SentienceNet leverages Artificial Intelligence to detect suicidal ideation in social media content, helping identify distress signals in online platforms like Reddit and Twitter. This project uses Natural Language Processing (NLP) techniques, machine learning (ML), and deep learning (DL) models to classify posts that may indicate suicidal thoughts and provide timely interventions.
 
-<img src="Assets/web.gif" > 
-</div>
+## Project Motivation
 
----
+With the rise of online communities, more individuals are sharing their struggles with mental health, often in anonymous or public forums. While this can be a valuable space for expression, it also presents a risk for those experiencing severe mental distress, including suicidal ideation. By using advanced AI models, this project aims to identify such posts and contribute to mental health safety.
 
-## Getting Started
+## Features
 
-The rise of social media and online communities creates safe and anonymous spaces for individuals to share their thoughts about their mental health and express their feelings and sufferings in online communities. To prevent suicide, it is necessary to detect suicide-related posts and user's suicide ideation in cyberspace by natural language processing methods. I focused on the online community called Reddit and the social networking website Twitter, and classify user's posts with potential suicide and without suicidal risk through text features processing, machine learning, and deep learning based methods.
+- **Reddit and Twitter Data**: Data collection from specific subreddits and Twitter based on targeted keywords.
+- **Suicidal Ideation Detection**: Classification of posts into suicidal ideation and non-suicidal based on NLP models.
+- **High Accuracy**: Achieved 96% accuracy using a Random Forest Classifier and 97% with a BiLSTM model.
+- **Data Visualizations**: Word clouds for frequent terms in both Reddit and Twitter data.
 
 ## Datasets
 
-Collected two sets of data from Reddit and Twitter. The Reddit data set includes (2958) suicidal ideation samples and a number of non-suicide texts (5381). The Twitter dataset has a total (3000) tweets with suicidal ideation.
-Reddit Data was scraped from subreddits like 'suicide watch', 'depression', 'anxiety' etc. Twitter data was collected by querying keywords like 'end my life', 'die' etc.
+Two datasets were collected for this project:
 
-**The Twitter word cloud (left) and Reddit word cloud (right) are shown as follow:**
+1. **Reddit**: Data from subreddits such as 'suicidewatch', 'depression', and 'anxiety', containing 2,958 suicidal ideation samples and 5,381 non-suicidal posts.
+2. **Twitter**: Tweets containing keywords like 'end my life', 'die', etc., with a total of 3,000 tweets related to suicidal ideation.
 
-<div align="center">
- <img alt="Demo" src="./WordClouds/twitter.png" height="300px" width="400px" />
- &nbsp; &nbsp;
- <img alt="Demo" src="./WordClouds/reddit.png" height="300px" width="400px"/>
-</div>
+## Getting Started
 
-## Feature Processing and Training
+### Prerequisites
 
-- Performed text cleaning and removed some corpus-specific stopwords. And plotted word cloud to visualize the frequently occurring words in a corpus.
-- Performed vectorization using Both Bag of Words and TFIDF Vectorizer.
-- Used grid search cv to find the best parameters to train the model using Random Forest Classifier and archived an accuracy of 96%.
-- Trained the model using Multilayer Bidirectional LSTM with GLOBE embedding to attain an accuracy of 97%.
+- Python 3.6+
+- Install dependencies using `pip`:
 
-## Results
-
-Results of different methods applied
-
-| Model        | Acc. | Pre. | Rec. | F1   |
-| ------------ | ---- | ---- | ---- | ---- |
-| RF + TFIDF   | 0.96 | 0.96 | 0.96 | 0.96 |
-| LSTM + GLOBE | 0.97 | 0.97 | 0.97 | 0.97 |
-
-## Usage
-
-- `Dataset` : All the collected and cleaned dataset
-- `Data_Collection` : Code for scraping data from reddit and twitter
-- `Src` : All The source code for text preprocessing and building ml models
-- `Pretrained_Models` : All the Pretrained Models and tokenizers
-- `Flask`: Code for server and model deployment
-
-### To run the server:
-
-- `cd Flask`
-- `python app.py`
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.<br/>
+```bash
+pip install -r requirements.txt
